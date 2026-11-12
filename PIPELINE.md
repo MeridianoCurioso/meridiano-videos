@@ -2,7 +2,7 @@
 
 Canal: **Meridiano Curioso** (@meridianocurioso, ID `UC9iWZCq6bw80TX8L2F56EIA`).
 Nicho: curiosidades de historia y geografía, en español, para toda la audiencia hispanohablante.
-Formato: Short vertical 1080x1920, de 40 a 58 s.
+Formato: vídeo vertical 1080x1920 de **65 a 80 s**. Se publica como Short en YouTube y en TikTok, que solo paga los vídeos de más de 1 minuto.
 Voz: `it-IT-GiuseppeMultilingualNeural` a +10 % (la "voz 10" elegida por el dueño).
 
 ## 1. Preparar el entorno
@@ -26,7 +26,7 @@ También hacen falta ffmpeg (con libass), Pillow y la variable de entorno `PIXAB
  "tags": ["…"],
  "escenas": [{"texto": "lo que dice la voz", "rotulo": "1. NOMBRE", "q": "pixabay query in english"}]}
 ```
-- Entre 8 y 11 escenas, unas 130 palabras en total. La escena 0 es el gancho y debe prometer algo ("y el tercero te va a sorprender"); la última es la pregunta para comentarios.
+- Entre 9 y 12 escenas, unas 170-190 palabras en total (el vídeo final tiene que durar más de 61 s). La escena 0 es el gancho y debe prometer algo ("y el tercero te va a sorprender"); la última es la pregunta para comentarios.
 - **Exactitud ante todo:** usa solo datos que puedas verificar. Si dudas de uno, búscalo en la web o quítalo. Los números van escritos en letra en el texto de la voz.
 
 ## 4. Voz, clips, montaje y revisión
@@ -39,11 +39,14 @@ Para cada escena, elige el clip que muestre de verdad ese lugar o esa cosa (desc
 ```bash
 python3 $P/tts.py . && python3 $P/assets.py . && python3 $P/montar.py . && python3 $P/revisar.py .
 ```
-Mira `tmp/revision.jpg`: los rótulos y subtítulos tienen que leerse bien y los clips encajar con el texto. El vídeo debe durar menos de 60 s.
+Mira `tmp/revision.jpg`: los rótulos y subtítulos tienen que leerse bien y los clips encajar con el texto. **Duración entre 61 y 90 s**: si sale corto, alarga el guion; si sale largo, recórtalo.
 
 ## 5. Subir
 1. Copia `short.mp4` a `videos/AAAA-MM-DD_slug.mp4` y añade el tema a `historial.md`. Solo se suben `videos/` e `historial.md`; nunca `dias/*/assets` (pesan demasiado).
 2. Haz `git add videos historial.md && git commit && git push`.
 3. Llama a `vidiq_video_upload` con url = `https://raw.githubusercontent.com/MeridianoCurioso/meridiano-videos/main/videos/<archivo>.mp4`.
-4. Crea el borrador con `vidiq_social_post_draft_create` (YOUTUBE, platformAccountId `UC9iWZCq6bw80TX8L2F56EIA`, categoryId 27 y el modo de publicación que indique la tarea) y publícalo con `vidiq_social_post_publish`.
+4. Crea **un único borrador** con `vidiq_social_post_draft_create` y dos destinos:
+   - YOUTUBE: platformAccountId `UC9iWZCq6bw80TX8L2F56EIA`, title, tags, categoryId 27 y la privacidad que indique la tarea. El campo text es la descripción.
+   - TIKTOK: platformAccountId `_000NFWe7wyQN_O6bs1iO9V2ejmk8Haiabm3`, text = gancho de una línea + 4-5 hashtags (máximo 150 caracteres), allowComment true, musicUsageConfirmed true (aceptado por el dueño), isAiGenerated true y el privacyLevel que indique la tarea.
+   Publícalo con `vidiq_social_post_publish`.
 5. Comprueba el resultado con `vidiq_social_post_status` hasta obtener el postUrl.
