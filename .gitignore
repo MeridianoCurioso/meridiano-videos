@@ -1,0 +1,6 @@
+dias/*/assets/
+dias/*/tmp/
+dias/*/voz/
+dias/*/short.mp4
+__pycache__/
+.env
