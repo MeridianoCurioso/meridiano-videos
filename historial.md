@@ -3,4 +3,4 @@
 | Fecha | Tema | Fórmula de referencia | Enlace |
 |---|---|---|---|
 | 2026-11-12 | 8 lugares de EE. UU. con nombre español | "7 países con nombre que les puso España" (canal de 551 subs, 291 000 vistas) | https://www.youtube.com/watch?v=wkYvbCrWzW8 |
-| 2026-11-13 | 6 países que duraron menos que unas vacaciones (Cartagena, Formosa, Mali, Zanzíbar, Somalilandia, Ucrania Carpática) | "¿Por qué Yucatán intentó separarse de México?" (Datos+Curiosos, 4710 subs, 78 600 vistas) | pendiente |
+| 2026-11-13 | 6 países que duraron menos que unas vacaciones (Cartagena, Formosa, Mali, Zanzíbar, Somalilandia, Ucrania Carpática) | "¿Por qué Yucatán intentó separarse de México?" (Datos+Curiosos, 4710 subs, 78 600 vistas) | https://www.youtube.com/watch?v=wcUtmYVy1vM |
